@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- 
+  The consent.html displays the text of your IRB-approved
+  consent form.  Even if you are not required to provide
+  a consent form, it is helpful to use this form to 
+  describe what people can do if an error comes up, etc...
+
+-->
+<html>
+    <head>
+        <title>Analogy Quality Experiment - Informed Consent Form</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel=stylesheet href="/static/css/style.css" type="text/css">
+        <script type="text/javascript">
+            function onexit() {
+              self.close(); // no harm, no foul here
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container-consent">
+            <div id="consent">
+                <h1>Consent to Participate in Research</h1>
+                <div class="legal well">
+                    <p style = "text-align: center; font-weight: bold">Analogy Quality Experiment</p>
+
+                    <p>This HIT is a psychology experiment being conducted by Dawn Chen, a 
+                    postdoctoral researcher in Professor Tom Griffiths's Computational Cognitive 
+                    Science Lab at the University of California, Berkeley. In order to consent to 
+                    participate, you MUST meet the following criteria:</p>
+
+                    <ul>
+                        <li>18 years of age or older.</li>
+                        <li>Fluent speaker of English.</li>
+                        <li>Have not participated in this experiment before.</li>
+                    </ul>
+
+                    <p>This study is designed to investigate how people rate the quality of word
+                    analogies. You will be shown analogies between pairs of words and asked to
+                    rate how good the analogies are.</p>
+
+                    <p>The study will take about 5 minutes and will pay $0.50.</p>
+                    
+                    <p>Your participation in this research is voluntary. You may refrain from 
+                    answering any questions that make you uncomfortable and may withdraw your 
+                    participation at any time without penalty by returning the HIT on MTurk and 
+                    emailing the experimenter at the address provided below.</p>
+
+                    <p>Other than monetary compensation, participating will provide no direct 
+                    benefits to you. But, we hope that this research will benefit society at 
+                    large. Many problems that people can solve very easily are very difficult to 
+                    automate (to have computers solve). By revealing more about how humans learn 
+                    and think, our research may help others to build and program computers that 
+                    can solve these kinds of problems.</p>
+
+                    <p>Your MTurk worker ID may be connected to individual responses, but we will 
+                    not be asking for any additional personally identifying information, and we 
+                    will handle responses as confidentially as possible. We cannot however 
+                    guarantee the confidentiality of information transmitted over the Internet. 
+                    We will be keeping data collected as part of this experiment indefinitely.</p>
+
+                    <p>If you have any questions about the study, feel free to contact Dawn Chen. 
+                    She can be reached at dawn.chen@berkeley.edu. If you have concerns about your 
+                    rights as a participant in this experiment, please contact UC Berkeley's 
+                    Committee for Protection of Human Subjects at (510) 642-7461 or 
+                    subjects@berkeley.edu.</p>
+                </div>
+
+                <p>By selecting the "consent" option below, I acknowledge that I am 18 or older, 
+                that I am a fluent speaker of English, that I have not completed this experiment 
+                before, that I have read this consent form, and that I agree to take part in the 
+                research.</p>
+
+                </br>
+
+                <button type="button" class="btn btn-danger btn-lg" style="float:left" onClick="onexit()">
+                    I do not consent to participate
+                </button>
+
+                <button type="button" class="btn btn-success btn-lg" style="float:right" onClick="window.location='/exp?hitId={{ hitid }}&assignmentId={{ assignmentid }}&workerId={{ workerid }}'">
+                    I consent to participate
+                </button>
+                
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+    </body>
+</html>
+

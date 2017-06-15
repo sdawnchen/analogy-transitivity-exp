@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- 
+    The ad.html has a very specific format.
+
+    Really there are two "ads" contained within this file.
+
+    The first ad displays to participants who are browsing
+    the Amazon Mechanical Turk site but have not yet accepted
+    your hit.  
+
+    The second part of the ad display after the person selected
+    "Accept HIT" on the Amazon website.  This will reload the
+    ad and will display a button which, when clicked, will pop
+    open a new browser window pointed at your local psiTurk
+    server (assuming it is running and accessible to the Internet).
+
+    See comments throughout for hints
+
+-->
+<html>
+    <head>
+        <title>Analogy Quality Experiment</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+        <link rel=stylesheet href="/static/css/bootstrap.min.css" type="text/css">
+        <style>
+            /* these tyles need to be defined locally */
+            body {
+                padding:0px;
+                margin: 0px;
+                background-color: white;
+                color: black;
+                font-weight: 300; 
+                font-size: 18px;
+            }
+
+            #container-hit-info {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 3%;
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container-hit-info">
+
+            <!--<div id="hit-info">-->
+                <!-- 
+                    If assignmentid is "ASSIGNMENT_ID_NOT_AVAILABLE"
+                    it means the participant has NOT accepted your hit. 
+                    This should display the typical advertisement about
+                    your experiment: who can participate, what the
+                    payment is, the time, etc...
+
+                -->
+                {% if assignmentid == "ASSIGNMENT_ID_NOT_AVAILABLE" %}
+
+                    <h1>Call for participants</h1><br/>
+                    <p>
+                        The Computational Cognitive Science Lab at UC Berkeley is looking for 
+                        participants for a short experiment on how people rate the quality of
+                        word analogies. The requirements are that you are at least 18 years old,
+                        fluent in English, and have not completed the Rate Similarity of Word
+                        Relations HIT. The task will take about 5 minutes and you will be paid
+                        $0.50 for participating.
+                    </p>
+                    <div class="alert alert-danger">
+                        <strong>This task can only be completed once.</strong> 
+                        If you have already completed this task or the Rate Similarity of Word
+                        Relations HIT before, the system will not allow you to complete this
+                        task. If this looks familiar, please return the HIT so that someone else
+                        can complete it.
+                    </div>
+                    <p>
+                        Otherwise, please click the "Accept HIT" button to begin the task.
+                    </p>
+                    
+
+                {% else %}
+
+                    <!-- 
+                        OTHERWISE
+                        If assignmentid is NOT "ASSIGNMENT_ID_NOT_AVAILABLE"
+                        it means the participant has accepted your hit. 
+                        You should thus show them instructions to begin the 
+                        experiment ... usually a button to launch a new browser
+                        window pointed at your server.
+
+                        It is important you do not change the code for the
+                        openwindow() function below if you want you experiment
+                        to work.
+                    -->
+                    <h1>Thank you for accepting this HIT!</h1><br />
+                    <p>
+                        Please click the button below to continue to the experiment. A new window
+                        will open, showing the informed consent form.
+                    </p>
+                    <script>
+                        function openwindow() {
+                            popup = window.open('{{ server_location }}/consent?hitId={{ hitid }}&assignmentId={{ assignmentid }}&workerId={{ workerid }}','_blank','toolbar=no,location=yes,resizable=yes,status=no,menubar=no,scrollbars=yes,width='+
+                                screen.width+',height='+screen.height);
+                        }
+                    </script>
+                    <div class="alert alert-info">
+                        <b>Tip:</b> You may need to disable pop-up blockers before continuing.
+                    </div>
+                    
+                    <center>
+                        <button type="button" class="btn btn-primary btn-lg" onClick="openwindow();">
+                          Begin Experiment
+                        </button>
+                    </center>
+
+
+                {% endif %}
+                <!-- 
+                    endif
+                -->
+        </div>
+    </body>
+</html>

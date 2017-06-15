@@ -1,0 +1,202 @@
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding:0px;
+  margin: 0px;
+  background-color: white;
+  color: black;
+  font-weight: 300; 
+  font-size: 18px;
+}
+
+
+/* text styling */
+strong {
+  font-weight: 600;         
+}
+
+.warm {
+  color: steelblue;
+  text-align: justify;
+}
+
+.cool {
+  color: #ccccff;
+}
+
+/* these are all the same for now, but easy to modify individually */
+#container-hit-info, #container-error, #container-consent, #container-instructions, #container-questionnaire {
+  max-width: 900px;
+  margin: auto;
+  padding: 3%;
+  background: white;
+}
+
+/*
+#container-consent, #container-exp {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1%;
+}*/
+
+/* ad.html  - the ad that people view first */
+#adlogo {
+  float: right;
+  width: 140px;
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+
+/* consent.html - the consent form */
+/*
+#consent {
+  margin: 0 auto;
+  margin-top: 0;
+  width: 800px;
+  font-size: 100%;
+}*/
+
+/*.legal {
+  text-align: justify;
+  font-size: 11pt;
+  line-height: 1.1em;
+}*/
+
+/*
+#trial {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}*/
+
+#query {
+  color: darkgray;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+/* errors */
+#error img {
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+#container-exp {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  flex-direction: column;
+
+  height: 100%;
+  min-width: 600px;
+}
+
+br {
+  display: block;
+  margin: 18px 0;
+}
+
+.slider-tick-label br {
+  display: inline;
+  margin: 0;
+}
+
+#trial-content-wrapper {
+  min-height: 530px;
+  max-width: 900px;
+  padding: 3%;
+  margin: auto;
+}
+
+#trial-content {
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  -webkit-box-flex-direction: column;
+  -moz-box-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  /* Center vertically */
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#sim-rating-bar {
+  width: 500px;
+}
+
+#sim-rating-bar .slider-tick-label {
+  vertical-align: top;
+}
+
+#container-progress {
+  /*border-top: 1px solid #cccccc;*/
+  width: 100%;
+  padding: 20px;
+  color: #808080;
+  background-color: #e3e3e3;
+
+  -webkit-box-flex: 0 1 96px;
+  -moz-box-flex: 0 1 96px;
+  -webkit-flex: 0 1 96px;
+  -ms-flex: 0 1 96px;
+  flex: 0 1 96px;
+}
+
+#container-progress .progress {
+  max-width: 700px;
+  /*height: 30px;*/
+}
+
+#container-progress .progress-bar {
+  /*font-size: 18px;
+  line-height: 30px;*/
+  /*opacity: 0.6;
+  filter: alpha(opacity=60);*/ /* For IE8 and earlier */
+  background-color: #bfbfbf;
+  /*border-radius: 4px;*/
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+#sim-rating-bar .slider-track, #sim-rating-bar .slider-tick {
+  background-image: -webkit-linear-gradient(top, #f1f1f1 0%, #f5f5f5 100%);
+  background-image: -o-linear-gradient(top, #f1f1f1 0%, #f5f5f5 100%);
+  background-image: linear-gradient(to bottom, #f1f1f1 0%, #f5f5f5 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff1f1f1', endColorstr='#fff5f5f5', GradientType=0);
+}
+
+#sim-rating-bar .slider-tick.in-selection {
+  background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
+  background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%);
+  background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
+  opacity: 1;
+}
