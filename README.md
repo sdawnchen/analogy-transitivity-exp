@@ -1,6 +1,6 @@
 # Overview
 
-This is the code for Experiment 3 (violations of the triangle inequality in relational similarity judgments, or in other words, violations of transitivity in analogy quality judgments) in "Evaluating vector-space models of analogy" (Chen, Peterson, & Griffiths, to appear in the 2017 *CogSci Proceedings*). You can download the paper [here](https://arxiv.org/abs/1705.04416). The code uses [psiTurk](https://psiturk.org/).
+This is the code for Experiment 3 (violations of the triangle inequality in relational similarity judgments, or in other words, violations of transitivity in analogy quality judgments) in "Evaluating vector-space models of analogy" (Chen, Peterson, & Griffiths, to appear in the *CogSci 2017 Proceedings*). You can download the paper [here](https://arxiv.org/abs/1705.04416). The code uses [psiTurk](https://psiturk.org/).
 
 
 # Screenshots
